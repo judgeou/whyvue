@@ -9,18 +9,21 @@
   <body>
     <!--界面-->
     <div id="app">
-      <button @click="clickA" type="button">{{a}}</button>
-      <button @click="clickB" type="button">{{b}}</button>
+      <numbtn></numbtn>
+      <numbtn></numbtn>
+      <numbtn></numbtn>
     </div>
 
     <script type="text/javascript">
       /* eslint-disable*/
-      // 状态
-      new Vue({
-        el: '#app',
-        data: {
-          a: 0,
-          b: 100
+      //  组件内容
+      var numbtn = {
+        template: '<div style="margin: 10px;"><button @click="clickA" type="button">{{a}}</button><button @click="clickB" type="button">{{b}}</button></div>',
+        data () {
+          return {
+            a: 0,
+            b: 100
+          }
         },
         methods: {
           clickA () {
@@ -31,6 +34,12 @@
             this.a--
             this.b++
           }
+        }
+      }
+      new Vue({
+        el: '#app',
+        components: {
+          numbtn: numbtn
         }
       })
     </script>
