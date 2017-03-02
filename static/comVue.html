@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>comVue</title>
+    <script type="text/javascript" src="js/vue.js"></script>
+
+  </head>
+  <body>
+    <!--界面-->
+    <div id="app">
+      <button @click="clickA" type="button">{{a}}</button>
+      <button @click="clickB" type="button">{{b}}</button>
+    </div>
+
+    <script type="text/javascript">
+      /* eslint-disable*/
+      // 状态
+      new Vue({
+        el: '#app',
+        data: {
+          a: 0,
+          b: 100
+        },
+        methods: {
+          clickA () {
+            this.a++
+            this.b--
+          },
+          clickB () {
+            this.a--
+            this.b++
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
